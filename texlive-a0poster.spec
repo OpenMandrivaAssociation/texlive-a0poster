@@ -3,7 +3,7 @@ Version:	1.22b
 Release:	1
 Summary:	Support for designing posters on large paper
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive//macros/latex/contrib/a0poster
+URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/a0poster
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/a0poster.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/a0poster.doc.tar.xz
@@ -27,11 +27,13 @@ sizes are DIN A0, DIN A1, DIN A2 and DIN A3.
     %_texmf_mktexlsr_post
 
 %preun
-    %_texmf_mktexlsr_preun
+    if [ $1 -eq 0 ]; then
+	%_texmf_mktexlsr_pre
+    fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mltexlsr_post
+	%_texmf_mktexlsr_post
     fi
 
 #-----------------------------------------------------------------------
