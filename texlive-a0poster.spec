@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/a0poster
+# catalog-date 2006-11-28 22:38:04 +0100
+# catalog-license lppl
+# catalog-version 1.22b
 Name:		texlive-a0poster
 Version:	1.22b
 Release:	1
@@ -44,6 +50,7 @@ sizes are DIN A0, DIN A1, DIN A2 and DIN A3.
 %doc %{_texmfdistdir}/doc/latex/a0poster/a0.tex
 %doc %{_texmfdistdir}/doc/latex/a0poster/a0_eng.pdf
 %doc %{_texmfdistdir}/doc/latex/a0poster/a0_eng.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,3 +61,5 @@ sizes are DIN A0, DIN A1, DIN A2 and DIN A3.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
