@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Provides fonts in sizes of 12pt up to 107pt and also makes sure
@@ -27,20 +25,12 @@ also create a PostScript header file for dvips which ensures
 that the poster will be printed in the right size. Supported
 sizes are DIN A0, DIN A1, DIN A2 and DIN A3.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -51,7 +41,6 @@ sizes are DIN A0, DIN A1, DIN A2 and DIN A3.
 %doc %{_texmfdistdir}/doc/latex/a0poster/a0.tex
 %doc %{_texmfdistdir}/doc/latex/a0poster/a0_eng.pdf
 %doc %{_texmfdistdir}/doc/latex/a0poster/a0_eng.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -62,5 +51,3 @@ sizes are DIN A0, DIN A1, DIN A2 and DIN A3.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
