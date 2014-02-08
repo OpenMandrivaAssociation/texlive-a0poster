@@ -6,7 +6,7 @@
 # catalog-version 1.22b
 Name:		texlive-a0poster
 Version:	1.22b
-Release:	2
+Release:	3
 Summary:	Support for designing posters on large paper
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/a0poster
