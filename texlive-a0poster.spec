@@ -1,6 +1,6 @@
 Name:		texlive-a0poster
 Version:	54071
-Release:	1
+Release:	2
 Summary:	Support for designing posters on large paper
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/a0poster
