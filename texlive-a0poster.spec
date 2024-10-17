@@ -3,7 +3,7 @@ Version:	54071
 Release:	2
 Summary:	Support for designing posters on large paper
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/a0poster
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/a0poster
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/a0poster.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/a0poster.doc.r%{version}.tar.xz
